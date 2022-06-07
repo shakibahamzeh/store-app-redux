@@ -1,0 +1,22 @@
+.details-container{
+    padding: 1.5rem;
+}
+
+
+
+
+.img-container div{
+display: flex;
+    flex-direction: row;
+}
+
+.img-slider{
+    display: flex;
+    flex-direction: row;
+}
+.slider{
+    width:400px;
+}
+.img-slider img{
+    width: 100px;
+}

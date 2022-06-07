@@ -1,31 +1,33 @@
 import React,{useEffect} from 'react';
 import { useDispatch,useSelector } from "react-redux";
 import { fetchProducts } from '../redux/products/productAction';
+import Loader from './Loader';
 import Product from "./Product";
 
-
+import "../assets/products.css"
 
 
  const Products = () => {
     const dispatch = useDispatch();
     const productsData = useSelector(state => state.products);
-    console.log(productsData.products)
-
     useEffect(()=>{
         if(!productsData.products.length) dispatch(fetchProducts())
     },[]);
-
   return (
-    <div>
-        {
+    <div className="container">
+        <h1>Products</h1>
+        <div className='products'>
+         {
           productsData.loading ? 
-          <h2>loading ...</h2>
+          <Loader/>
           :
           productsData.error ?
           <p>{productsData.errorMsg}</p>
           :
           productsData.products.map(product => <Product key={product.id} productData={product}/> )
         }
+        </div>
+       
     </div>
   )
 }

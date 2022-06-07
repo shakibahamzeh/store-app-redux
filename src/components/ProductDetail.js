@@ -1,28 +1,40 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 import { useParams } from 'react-router-dom';
+import "../assets/productDetails.css";
 
 
 const ProductDetail = (props) => {
     const id = useParams().id;
-    console.log(id)
     const data = useSelector(state => state.products.products);
     const product = data[id];
-    const {category,title,price,description} = product;
-    
+    const {title,price,description,images} = product;
+    console.log(images)
+    const dataImages =[
+      {images: `${images[0]}`},
+      {images: `${images[1]}`},
+      {images:`${images[2]}`},
+    ]
+    console.log(dataImages)
   return (
-    <div>
-        <h2>{title}</h2>
-        <div>
-             <img src={`${category.image}`} alt="product"/>
-        </div>
-        <div>
+    <div className='details-container'>
+        
+        <div className='img-container'>
+          
+            
+          
+          </div>
+          <div>
+            <h2>{title}</h2>
+          </div>
+          <div>
             <p>{description}</p>
-        </div>
-        <div>
+          </div>
+          <div>
             <p>{price} $</p>
+          </div>
         </div>
-    </div>
+    
   )
 }
 
