@@ -5,7 +5,8 @@ import Products from './components/Products';
 import {Routes , Route } from "react-router-dom";
 import ProductDetail from './components/ProductDetail';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
+import ContactUs from "./components/ContactUs";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
          <Routes>
            <Route path='/products' element={<Products/>}/>
            <Route path='/products/:id' element={<ProductDetail/>}/>
+           <Route path='/contactUs' element={<ContactUs/>}/>
            <Route path='/' element={<Products/>}/>
          </Routes>
          <Footer/>
