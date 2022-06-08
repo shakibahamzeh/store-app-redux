@@ -64,6 +64,9 @@
 
 .delete-icon , .mines-icon , .plus-icon{
     color:#FFBC97;
+    border: 1px solid #F7F7F7;
+    outline: 1px solid #F7F7F7;
+    background: #F7F7F7;
 }
 .item-counter{
     display: inline-block;

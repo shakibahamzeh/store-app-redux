@@ -1,0 +1,28 @@
+.cart-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap:20px;
+    padding: 2rem 1.5rem;
+}
+.order-container {
+    background-color: green;
+}
+.order-container h2{
+    color: #FFBC97;
+    text-align: center;
+}
+.order-container .total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    color: #FFBC97;
+    border-bottom: 1px solid red;
+}
+.total-number{
+    color: #FFE300;
+}
+.btn-cart{
+    border: none;
+    outline: none;
+}

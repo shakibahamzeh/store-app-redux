@@ -18,7 +18,7 @@ const Product = ({productData}) => {
          <h2>{productData.title}</h2>
         </div>
         <div>
-          <img src={productData.images[0]}/>
+          <img src={productData.images[0]} alt="product"/>
         </div>
         <div className='detail-container'>
           <div className='price'>
@@ -37,7 +37,7 @@ const Product = ({productData}) => {
          {
             isInCart(state,productData.id) ?
             <button onClick={()=> dispatch({type:"INCREASE_ITEM" , payload: productData})} >
-              <AddIcon className='plus-icon' style={{ border: 'none',outline:"none" }}/>
+              <AddIcon className='plus-icon' />
             </button>
              :
              <button onClick={()=> dispatch({type:"ADD_ITEM" , payload: productData})} className="add-cart">ADD TO CART</button>

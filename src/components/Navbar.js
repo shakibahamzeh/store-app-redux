@@ -35,8 +35,10 @@ const Navbar = () => {
               }
             </ul>
         <div className='shopping-cart'>
-            <img src={basket} alt="shopping-cart"/>
-            <span className='counter'>{counter}</span>
+           <Link to='/cart'>
+                <img src={basket} alt="shopping-cart"/>
+                <span className='counter'>{counter}</span>
+           </Link>
         </div>
         </div>
     </nav>

@@ -9,7 +9,11 @@
 }
 form{
     width: 500px;
-    padding: 0 1rem;
+    padding: 1rem;
+    box-shadow: 6px 9px 27px -1px rgba(255,120,0,0.67);
+    -webkit-box-shadow: 6px 9px 27px -1px rgba(255,120,0,0.67);
+    -moz-box-shadow: 6px 9px 27px -1px rgba(255,120,0,0.67);
+    border-radius: 7px;
 }
 .form-control{
     width: 100%;
@@ -31,7 +35,7 @@ form{
     color: #FFBC97;
     font-size:30px;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 .form-control button{
     color: #F7F7F7;
@@ -39,6 +43,7 @@ form{
     cursor: pointer;
     transition: 0.8s;
     font-weight: 700;
+    margin-top: 1.5rem;
 }
 .form-control button:hover{
     opacity: 0.99;

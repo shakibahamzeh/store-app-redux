@@ -22,7 +22,7 @@ const ProductDetail = (props) => {
         <div className='img-container'>
           
             
-          
+          <img src={images} alt="product"/>
           </div>
           <div>
             <h2>{title}</h2>
