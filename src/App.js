@@ -7,6 +7,7 @@ import ProductDetail from './components/ProductDetail';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ContactUs from "./components/ContactUs";
+import NotFound from './components/NotFound';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
            <Route path='/products/:id' element={<ProductDetail/>}/>
            <Route path='/contactUs' element={<ContactUs/>}/>
            <Route path='/' element={<Products/>}/>
+           <Route path='*' element={<NotFound/>}/>
          </Routes>
          <Footer/>
        </div>
