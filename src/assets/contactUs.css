@@ -7,7 +7,7 @@
     align-items: center;
     height: var(100vh - 50px);
 }
-form{
+.form-contact-us{
     width: 500px;
     padding: 1rem;
     box-shadow: 6px 9px 27px -1px rgba(255,120,0,0.67);
@@ -62,7 +62,7 @@ form{
     margin-bottom: 0.5rem;
 }
 @media (max-width:550px) {
-    form{
+    .form-contact-us{
         width: 300px;
     }
 }

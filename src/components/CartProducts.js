@@ -8,11 +8,11 @@ import { removeItem, decreaseItem, increaseItem } from "../redux/cart/cartAction
 const CartProducts = (props) => {
     
   const dispatch = useDispatch();
-  const {images, title, price, quantity} = props.data;
+  const { title, price, quantity} = props.data;
   
   return (
         <div>
-            <img  src={images[0]} alt="product" />
+           {/*<img  src={images[0]} alt="product" />*/}
             <div>
                 <h3>{title}</h3>
                 <p>{price} $</p>

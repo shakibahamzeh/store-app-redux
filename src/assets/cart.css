@@ -3,9 +3,11 @@
     grid-template-columns: 3fr 1fr;
     gap:20px;
     padding: 2rem 1.5rem;
+    height: calc(100vh - 70px);
 }
 .order-container {
     background-color: green;
+    height: 300px;
 }
 .order-container h2{
     color: #FFBC97;

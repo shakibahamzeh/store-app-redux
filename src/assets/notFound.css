@@ -4,13 +4,16 @@
     justify-content: center;
     align-items: center;
     margin: 1.5rem;
+    height: calc(100vh - 80px);
 }
 .not-found-container h1{
+    text-align: center;
     color: #FF7800;
     font-size: 24px;
     font-weight: 700;
 }
 .not-found-container p{
+    text-align: center;
     color: #FFBC97;
     margin: 1rem 0;
 }

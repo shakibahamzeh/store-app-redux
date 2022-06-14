@@ -3,6 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+ul , li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
 .App{
     background-color: #F7F7F7;
+}
+:root{
+    --blueGray:#90ADC6;
+    --pewter:#E9EAEC;
+    --yellow:#FAD02C;
+    --darkBlue:#333652;
+    --black:#171515;
+    --white:#F9F6F0;
+    --padding:0 1.5rem;
 }

@@ -8,8 +8,6 @@ const Cart = () => {
     
     const dispatch = useDispatch();
     const state = useSelector(state => state.cart)
-    
-
   return (
     <div className='cart-container'>
         <div>

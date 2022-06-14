@@ -5,6 +5,7 @@ import Loader from './Loader';
 import Product from "./Product";
 
 import "../assets/products.css"
+import Slider from './Slider';
 
 
  const Products = () => {
@@ -15,8 +16,14 @@ import "../assets/products.css"
     },[]);
   return (
     <div className="container">
-        <h1>Products</h1>
-        <div className='products'>
+       <div className='slider-container'>
+         <Slider/>
+       </div>
+
+        <div>
+          <h1>Products</h1>
+        </div>
+        <div className='products' >
          {
           productsData.loading ? 
           <Loader/>
@@ -24,7 +31,8 @@ import "../assets/products.css"
           productsData.error ?
           <p>{productsData.errorMsg}</p>
           :
-          productsData.products.map(product => <Product key={product.id} productData={product}/> )
+          productsData.products.map(product => <Product key={product.id} productData={product}/>)
+          
         }
         </div>
        

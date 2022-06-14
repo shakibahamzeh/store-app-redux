@@ -1,14 +1,14 @@
 .product-container{
     width: 100%;
-    box-shadow: 6px 9px 27px -1px rgba(255,120,0,0.67);
-    -webkit-box-shadow: 6px 9px 27px -1px rgba(255,120,0,0.67);
-    -moz-box-shadow: 6px 9px 27px -1px rgba(255,120,0,0.67);
+    box-shadow: 6px 9px 27px -1px rgba(144,173,198,0.67);
+    -webkit-box-shadow: 6px 9px 27px -1px rgba(144,173,198,0.67);
+    -moz-box-shadow: 6px 9px 27px -1px rgba(144,173,198,0.67);
     border-radius: 7px;
 }
 .product-container h2{
     height: 80px;
     font-size: 18px;
-    color:#FFBC97;
+    color:var(--darkBlue);
     padding: 1rem;
     word-spacing: -4px;
 }
@@ -23,7 +23,7 @@
     padding:1rem;
 }
 .detail-container .price p{
-    color: #FFE300;
+    color:var(--yellow);
     font-size: 20px;
     font-weight: 600;
 }
@@ -34,7 +34,6 @@
     padding: 1rem;
 }
 .btn-wrapper{
-    background-color: #0ba360;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,8 +44,8 @@
     outline: none;
     padding: 1rem 1.5rem;
     border-radius: 7px;
-    background-color: #FFBC97;
-    color: #F7F7F7;
+    background-color: var(--darkBlue);
+    color: var(--white);
     cursor: pointer;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
@@ -57,20 +56,19 @@
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-    background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
-    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+    background-image: linear-gradient(to right, #45496d, #4f5a75, #51647a, #294a66);
+    box-shadow: 0 4px 15px 0 rgba(120, 148, 172, 0.67);
 }
 
 
 .delete-icon , .mines-icon , .plus-icon{
-    color:#FFBC97;
-    border: 1px solid #F7F7F7;
-    outline: 1px solid #F7F7F7;
-    background: #F7F7F7;
+    cursor: pointer;
+    color:var(--darkBlue);
+    background: var(--white);
 }
 .item-counter{
     display: inline-block;
     margin: 0 1rem;
     font-size: 20px;
-    color: #FFBC97;
+    color: var(--darkBlue);
 }

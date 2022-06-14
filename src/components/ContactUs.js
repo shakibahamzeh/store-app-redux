@@ -41,7 +41,7 @@ const ContactUs = () => {
         <div>
             <h2>Contact Us</h2>
         </div>
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={formik.handleSubmit} className="form-contact-us">
             <div className='form-control'>
                 <label htmlFor='firsName'>FirstName</label>
                 <input 
