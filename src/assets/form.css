@@ -26,6 +26,11 @@
     color: var(--blueGray);
 }
 
+
+
+
+
+
 @media (max-width:980px) {
     .nav-form input{
         width: 250px;

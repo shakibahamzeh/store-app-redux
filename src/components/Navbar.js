@@ -20,11 +20,13 @@ const Navbar = () => {
      const [activeId, setActiveId] = useState();
      const dispatch = useDispatch();
      const categoriesData = useSelector(state => state.categories);
-     const counter = useSelector(state=>state.cart.itemsCounter)
+     const counter = useSelector(state=>state.cart.itemsCounter);
+
+  
     useEffect(()=>{
         if(!categoriesData.categories.length) dispatch(fetchCategories())
     },[]);
-    console.log(categoriesData.categories)
+    
   return (
     <nav className='navbar'>
         <div className='brand'>
@@ -37,7 +39,7 @@ const Navbar = () => {
                     navbarItems.map((item)=> <Link to={`/${item.pathName}`} key={item.id}><li onClick={() => setActiveId(item.id)} className={activeId === item.id ? "active" : ""}>{item.content}</li></Link>)
                   }
                  </ul>
-                 <MenuIcon className='menu-icon'/>
+                 <MenuIcon className='menu-icon' />
                 </div>
                 
                 <div className='form-container'>

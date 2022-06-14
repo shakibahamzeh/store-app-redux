@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React,{useEffect,useState} from 'react';
 import { useDispatch,useSelector } from "react-redux";
 import { fetchProducts } from '../redux/products/productAction';
 import Loader from './Loader';
@@ -6,14 +6,26 @@ import Product from "./Product";
 
 import "../assets/products.css"
 import Slider from './Slider';
+import Pagination from './Pagination';
 
 
  const Products = () => {
     const dispatch = useDispatch();
     const productsData = useSelector(state => state.products);
+    //pagation
+
+    const [currentPage,setCurrentPage] = useState(1);
+    const [productsPerPage,setProductPerPage] = useState(24);
+    const indexOfLastProduct = currentPage * productsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+    const currentProducts = productsData.products.slice(indexOfFirstProduct, indexOfLastProduct);
+    //function
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
     useEffect(()=>{
         if(!productsData.products.length) dispatch(fetchProducts())
     },[]);
+   
+     
   return (
     <div className="container">
        <div className='slider-container'>
@@ -31,11 +43,12 @@ import Slider from './Slider';
           productsData.error ?
           <p>{productsData.errorMsg}</p>
           :
-          productsData.products.map(product => <Product key={product.id} productData={product}/>)
+          currentProducts.map(product => <Product key={product.id} productData={product} />)
           
         }
+        
         </div>
-       
+       <Pagination totalProducts={productsData.products.length} productsPerPage={productsPerPage} paginate={paginate}/>
     </div>
   )
 }

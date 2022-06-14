@@ -1,0 +1,21 @@
+.pagination{
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: var(--padding);
+}
+.pagination ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination ul li{
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--yellow);
+    border: 1px solid var(--blueGray);
+    cursor: pointer;
+}
+

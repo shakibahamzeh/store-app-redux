@@ -46,6 +46,9 @@
 .menu-container ul li:hover{
     color: var(--yellow);
 }
+.menu-container ul li.active{
+  color: var(--yellow);
+}
 .nav-icons{
     display: flex;
     align-items: center;
@@ -90,7 +93,7 @@
 }
 
 .active{
-    color: var(--yellow);
+  color: var(--yellow);
 }
 
 
@@ -133,7 +136,7 @@
 
 @media (max-width:769px) {
     .form-container{
-    margin-right: 0.3rem;
+    margin-right: 0.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,11 +150,16 @@
 }
 .menu-container .menu-icon{
     display:block;
-    margin-right: 1rem;
+    margin-right: 0.6rem;
     width: 35px;
     height: 35px;
     border: 1px solid var(--white);
     border-radius: 8px;
     padding: 0.1rem;
 }
+}
+@media (max-width:376px) {
+    .navbar .brand h2{
+        font-size: 28px;
+    }
 }
