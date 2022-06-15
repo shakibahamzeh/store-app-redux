@@ -3,28 +3,66 @@
     grid-template-columns: 3fr 1fr;
     gap:20px;
     padding: 2rem 1.5rem;
-    height: calc(100vh - 70px);
+    min-height: 400px;
 }
-.order-container {
-    background-color: green;
-    height: 300px;
+.order-container{
+    background-color: aquamarine;
+    padding: 1rem;
+    height: 250px;
+    border-radius: 8px;
+    box-shadow: 6px 9px 27px -1px rgba(144,173,198,0.67);
+    -webkit-box-shadow: 6px 9px 27px -1px rgba(144,173,198,0.67);
+    -moz-box-shadow: 6px 9px 27px -1px rgba(144,173,198,0.67);
 }
 .order-container h2{
-    color: #FFBC97;
-    text-align: center;
+    color: var(--darkBlue);
+    margin-bottom: 1rem;
 }
-.order-container .total{
+.order-container div{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem;
-    color: #FFBC97;
-    border-bottom: 1px solid red;
+    margin-bottom: 0.5rem;
 }
-.total-number{
-    color: #FFE300;
+.order-container div:last-child{
+    color: var(--yellow);
 }
-.btn-cart{
+.order-container .btn-cart{
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+.order-container .btn-cart button{
     border: none;
     outline: none;
+    padding: 1rem;
+    display: inline-block;
+    border-radius: 8px;
+    color: var(--white);
+    background-color: var(--darkBlue);
+    cursor: pointer;
+}
+.order-container .btn-cart button:hover{
+     background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, #45496d, #4f5a75, #51647a, #294a66);
+    box-shadow: 0 4px 15px 0 rgba(120, 148, 172, 0.67);
+}
+
+
+.order-container .btn-cart button:last-child{
+    background-color: var(--yellow);
+}
+.order-container .btn-cart button:last-child:hover{
+    background-image: linear-gradient(to right, #e6c956, #f0cb38, #f0ba50, #d1b43e);
+    box-shadow: 0 4px 15px 0 rgba(250, 208, 44, 0.67);
+}
+.shopping-cart-container{
+    background-color: #f0cb38;
+    padding: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 6px 9px 27px -1px rgba(144,173,198,0.67);
+    -webkit-box-shadow: 6px 9px 27px -1px rgba(144,173,198,0.67);
+    -moz-box-shadow: 6px 9px 27px -1px rgba(144,173,198,0.67);
 }

@@ -10,9 +10,12 @@ const Cart = () => {
     const state = useSelector(state => state.cart)
   return (
     <div className='cart-container'>
-        <div>
+        <div className='shopping-cart-container'>
             <h2>Shopping Cart Products</h2>
-             {state.selectedItems.map(item => <CartProducts key={item.id} data={item} />)}
+            <div>
+                {state.selectedItems.map(item => <CartProducts key={item.id} data={item} />)}
+            </div>
+             
         </div>
        <div className='order-container'>
            <div>
@@ -27,7 +30,7 @@ const Cart = () => {
                <div className='total-number'>{state.total} $</div>
            </div>
            <div className='btn-cart'>
-               <button onClick={()=> dispatch(checkout())}>checkout</button>
+               <button onClick={()=> dispatch(checkout())}>Checkout</button>
                <button onClick={()=> dispatch(clear())}>Clear</button>
            </div>
        </div>

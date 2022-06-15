@@ -4,15 +4,18 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { removeItem, decreaseItem, increaseItem } from "../redux/cart/cartAction";
+import '../assets/cartProducts.css';
 
-const CartProducts = (props) => {
+const CartProducts = ({data}) => {
     
   const dispatch = useDispatch();
-  const { title, price, quantity} = props.data;
+ 
+  const { title, price, quantity} = data;
   
+   
   return (
-        <div>
-           {/*<img  src={images[0]} alt="product" />*/}
+        <div className='cart-products-container'>
+          
             <div>
                 <h3>{title}</h3>
                 <p>{price} $</p>
@@ -23,10 +26,10 @@ const CartProducts = (props) => {
             <div>
                 {
                     quantity > 1 ? 
-                    <button onClick={() => dispatch(decreaseItem(props.data))} ><RemoveIcon/></button> :
-                    <button onClick={() => dispatch(removeItem(props.data))} ><DeleteIcon/></button>
+                    <button onClick={() => dispatch(decreaseItem(data))} ><RemoveIcon/></button> :
+                    <button onClick={() => dispatch(removeItem(data))} ><DeleteIcon/></button>
                 }
-                <button onClick={() => dispatch(increaseItem(props.data))} ><AddIcon/></button>
+                <button onClick={() => dispatch(increaseItem(data))} ><AddIcon/></button>
             </div>
         </div>
         
