@@ -12,6 +12,7 @@ import Cart from "./components/Cart";
 import NotFound from './components/NotFound';
 import AboutUs from './components/AboutUs';
 import Login from './components/Login';
+import Sort from './components/Sort';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path='/bloge/page2'/>
            <Route path='/aboutUs' element={<AboutUs/>}/>
            <Route path='/login' element={<Login/>}/>
+           <Route path='/sort' element={<Sort/>}/>
            <Route path='/' element={<Products/>}/>
            <Route path='*' element={<NotFound/>}/>
          </Routes>
