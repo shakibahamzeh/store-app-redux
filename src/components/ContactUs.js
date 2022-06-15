@@ -38,8 +38,14 @@ const ContactUs = () => {
    
   return (
     <div className='contact-container'>
-        <div>
-            <h2>Contact Us</h2>
+        <div className='contact-us-content'>
+            <h2>Let's Talk With Us</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+            <p> when an unknown printer took a galley of type and scrambled it to make a type</p>
+            <p> specimen book. It has survived not only five centuries, but also the leap into </p>
+            <p>electronic typesetting, remaining essentially unchanged. It was popularised</p>
+            <p>the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>
         </div>
         <form onSubmit={formik.handleSubmit} className="form-contact-us">
             <div className='form-control'>

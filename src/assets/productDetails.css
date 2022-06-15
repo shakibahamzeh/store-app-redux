@@ -1,22 +1,100 @@
 .details-container{
     padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.details-container .img-container{
+    width: 100%;
+}
+.img-container img{
+    width: 100%;
+    display: block;
+    height: 400px;
+}
+.details-content h2{
+    color: var(--darkBlue);
+    margin-top: 1rem;
+}
+.details-content p{
+    color: var(--blueGray);
+    margin: 0.5rem 0;
+}
+.more-detail p{
+    color: var(--darkBlue);
+    margin-top: 0.5rem;
+}
+.more-detail p:first-child{
+  color:var(--yellow) ;
+  font-size: 18px;
+  font-weight: 500;
+}
+/*btn*/
+
+.btns-details-wrapper{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+    margin-top:2rem;
 }
 
-
-
-
-.img-container div{
-display: flex;
-    flex-direction: row;
-}
-
-.img-slider{
+.btn-detail-container{
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  
 }
-.slider{
-    width:400px;
+
+ .btn-detail-container .add-cart{
+    border: none;
+    outline: none;
+    padding: 1rem 1.5rem;
+    border-radius: 7px;
+    background-color: var(--darkBlue);
+    color: var(--white);
+    cursor: pointer;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
-.img-slider img{
-    width: 100px;
+.back-btn{
+    border: none;
+    outline: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 7px;
+    background-color: var(--yellow);
+    color: var(--white);
+    cursor: pointer;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.back-btn a{
+    color: var(--white);
+}
+.back-btn:hover{
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, #e6c956, #f0cb38, #f0ba50, #f7d964);
+    box-shadow: 0 4px 15px 0 rgba(250, 208, 44, 0.67);
+}
+.btn-detail-container .add-cart:hover{
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, #45496d, #4f5a75, #51647a, #294a66);
+    box-shadow: 0 4px 15px 0 rgba(120, 148, 172, 0.67);
+  
+}
+
+
+
+@media (max-width:768px) {
+.details-container{
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
 }
