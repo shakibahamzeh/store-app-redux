@@ -31,9 +31,27 @@ const Cart = () => {
                <div className='total-number'>{state.total} $</div>
            </div>
            <div className='btn-cart'>
-               <Link to="/checkout" onClick={()=> dispatch(checkout())}>Checkout</Link>
-               <Link to="/" onClick={()=> dispatch(clear())}>Clear</Link>
+               <button onClick={()=> dispatch(checkout())}>Checkout</button>
+               <button onClick={()=> dispatch(clear())}>Clear</button>
            </div>
+        <div className='checkout'>
+         {
+           state.checkOut && 
+             <div>
+             <h3>Checked Out Successfully</h3>
+             <Link to="/products">Buy More</Link>
+            </div>
+         }
+         </div>
+         <div>
+          {
+           !state.checkOut && state.itemsCounter === 0 &&
+            <div className='clear-link'>
+             <h3>Want to Buy?</h3>
+             <Link to="/products">Go To Shop</Link>
+           </div>
+         }
+         </div>
        </div>
     </div>
   )
