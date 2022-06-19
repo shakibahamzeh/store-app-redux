@@ -17,6 +17,7 @@
     border-radius: 8px;
     margin: 1.5rem 0 2rem 0;
 }
+
 .products{
     display: grid;
     grid-template-columns: repeat(4, 1fr);

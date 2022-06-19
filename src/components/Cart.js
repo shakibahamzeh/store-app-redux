@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {clear , checkout} from '../redux/cart/cartAction';
 import CartProducts from './CartProducts';
+import { Link } from 'react-router-dom';
 import "../assets/cart.css";
 
 const Cart = () => {
@@ -22,16 +23,16 @@ const Cart = () => {
                <h2>Order Summary</h2>
            </div>
            <div className='total'>
-               <div>Total Items:</div>
+               <span>Total Items:</span>
                <div className='total-number'>{state.itemsCounter}</div>
            </div>
            <div className='total'>
-               <div>Total Price:</div>
+               <span>Total Price:</span>
                <div className='total-number'>{state.total} $</div>
            </div>
            <div className='btn-cart'>
-               <button onClick={()=> dispatch(checkout())}>Checkout</button>
-               <button onClick={()=> dispatch(clear())}>Clear</button>
+               <Link to="/checkout" onClick={()=> dispatch(checkout())}>Checkout</Link>
+               <Link to="/" onClick={()=> dispatch(clear())}>Clear</Link>
            </div>
        </div>
     </div>

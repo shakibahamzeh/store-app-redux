@@ -28,6 +28,7 @@
 .form-container{
     margin-right: 1.5rem;
 }
+/*menu*/
 .menu-container ul{
     display: flex;
     align-items: center;
@@ -128,7 +129,7 @@
     margin-right: 0.7rem;
 }
 }
-@media (max-width:850) {
+@media (max-width:850px) {
     .menu-container ul li {
     padding: 0.3rem;
 }
@@ -141,21 +142,41 @@
     align-items: center;
     justify-content: center;
 }
-.menu-container{
-    display: flex;
-    align-items: center;
+.menu-container {
+    position: relative;
 }
-.menu-container ul {
-  display: none;
+.menu-container ul{
+    background-color: brown;
+    flex-direction: column;
+    height: auto;
+    margin-top: 240px;
+    margin-right: 0;
+}
+.menu-container ul li{
+    width: 100%;
+    text-align: center;
+    margin-right: 0px;
+    padding: 0.5rem 0;
+}
+.menu-container ul a{
+    display: inline-block;
+    width: 100%;
+    border-top: 1px solid var(--white);
+}
+.menu-container ul a:nth-child(1){
+    border: none;
 }
 .menu-container .menu-icon{
     display:block;
-    margin-right: 0.6rem;
+    margin-right: 0.3rem;
     width: 35px;
     height: 35px;
     border: 1px solid var(--white);
     border-radius: 8px;
     padding: 0.1rem;
+    position: absolute;
+    right: 0px;
+    top: 0px;
 }
 }
 @media (max-width:376px) {

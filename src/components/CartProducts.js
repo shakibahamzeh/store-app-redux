@@ -10,27 +10,33 @@ const CartProducts = ({data}) => {
     
   const dispatch = useDispatch();
  
-  const { title, price, quantity} = data;
+  const { title, price, quantity,images} = data;
   
    
   return (
         <div className='cart-products-container'>
-          
             <div>
-                <h3>{title}</h3>
-                <p>{price} $</p>
+                <img src={images[0]} alt="product"/>
             </div>
-            <div>
-                <span>{quantity}</span>
-            </div>
-            <div>
-                {
+            <section>
+                 <div>
+                    <h3>{title}</h3>
+                 </div>
+                 <div className='price-content'>
+                   <p>{price} $</p>
+                 </div>
+                 <div className='quantity'>
+                   <p>{quantity}</p>
+                 </div>
+                 <div className='button-wrapper'>
+                  {
                     quantity > 1 ? 
-                    <button onClick={() => dispatch(decreaseItem(data))} ><RemoveIcon/></button> :
-                    <button onClick={() => dispatch(removeItem(data))} ><DeleteIcon/></button>
-                }
-                <button onClick={() => dispatch(increaseItem(data))} ><AddIcon/></button>
-            </div>
+                    <button onClick={() => dispatch(decreaseItem(data))} ><RemoveIcon className='mines-icon'/></button> :
+                    <button onClick={() => dispatch(removeItem(data))} ><DeleteIcon className='delete-icon'/></button>
+                  }
+                  <button onClick={() => dispatch(increaseItem(data))} ><AddIcon className='plus-icon'/></button>
+                 </div>
+            </section> 
         </div>
         
   )

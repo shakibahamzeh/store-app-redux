@@ -18,15 +18,31 @@ const Navbar = () => {
     ];
 
      const [activeId, setActiveId] = useState();
-     const dispatch = useDispatch();
-     const categoriesData = useSelector(state => state.categories);
      const counter = useSelector(state=>state.cart.itemsCounter);
 
+     //menu
+     const [toggleMenu, setToggleMenu] = useState(false);
+     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+
+    const toggleNav = () => {
+    setToggleMenu(!toggleMenu)
+    }
   
-    useEffect(()=>{
-        if(!categoriesData.categories.length) dispatch(fetchCategories())
-    },[]);
     
+    useEffect(() => {
+
+    const changeWidth = () => {
+      setScreenWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', changeWidth);
+     return () => {
+        window.removeEventListener('resize', changeWidth)
+    }
+
+  }, []);
+
+
   return (
     <nav className='navbar'>
         <div className='brand'>
@@ -34,12 +50,17 @@ const Navbar = () => {
         </div>
         <div className='nav-container'>
                 <div className='menu-container'>
-                 <ul className='menu'>
+                 {
+                   ((toggleMenu || screenWidth > 769) && ( <ul className='menu'>
                   {
                     navbarItems.map((item)=> <Link to={`/${item.pathName}`} key={item.id}><li onClick={() => setActiveId(item.id)} className={activeId === item.id ? "active" : ""}>{item.content}</li></Link>)
                   }
-                 </ul>
-                 <MenuIcon className='menu-icon' />
+                   
+                 </ul>))
+                 } 
+                
+                 <MenuIcon className='menu-icon' onClick={toggleNav} />
+                
                 </div>
                 
                 <div className='form-container'>
