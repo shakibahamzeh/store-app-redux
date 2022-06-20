@@ -1,10 +1,10 @@
-const initialState = {
+
+let initialState = {
     checkOut:false,
     selectedItems:[],
     itemsCounter:0,
     total:0
 }
-
 
 
 const sumItems = (items) =>{
@@ -14,7 +14,7 @@ const sumItems = (items) =>{
 }
 
 const cartReducer = (state = initialState,action) => {
-    
+ 
    switch(action.type){
        case "ADD_ITEM":
            if(!state.selectedItems.find(item => item.id === action.payload.id)){

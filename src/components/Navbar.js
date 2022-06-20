@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector,useDispatch } from 'react-redux';
-import { fetchCategories } from '../redux/categories/categoriesAction';
+import { useSelector} from 'react-redux';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';

@@ -12,6 +12,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 const Product = ({productData}) => {
   const state = useSelector(state => state.cart);
   const dispatch = useDispatch();
+
   return (
     <div className='product-container'>
         <div>

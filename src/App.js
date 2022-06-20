@@ -12,13 +12,16 @@ import Cart from "./components/Cart";
 import NotFound from './components/NotFound';
 import AboutUs from './components/AboutUs';
 import Login from './components/Login';
-import Sort from './components/Sort';
 
+import {persistStore} from "redux-persist";
+import {PersistGate} from "redux-persist/integration/react"
 
 
 function App() {
+  let persistor = persistStore(store)
   return (
     <Provider store={store}>
+       <PersistGate persistor={persistor}>
        <div className="App">
          <Navbar/>
          <Routes>
@@ -31,13 +34,13 @@ function App() {
            <Route path='/bloge/page2'/>
            <Route path='/aboutUs' element={<AboutUs/>}/>
            <Route path='/login' element={<Login/>}/>
-           <Route path='/sort' element={<Sort/>}/>
            <Route path='/' element={<Products/>}/>
            <Route path='*' element={<NotFound/>}/>
           
          </Routes>
          <Footer/>
        </div>
+       </PersistGate>
     </Provider>
     
   );
