@@ -9,6 +9,9 @@
     margin: 0.5rem 0;
     text-align: center;
 }
+.profile-container h3{
+    color: var(--blueGray);
+}
 .profile-container img{
     width: 100px;
     height: 100px;

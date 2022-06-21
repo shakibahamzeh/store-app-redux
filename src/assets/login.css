@@ -7,7 +7,7 @@
 }
 .login-page-container{
    margin: 2rem;
-   max-width: 400px;
+   min-width: 300px;
    min-height: 100px;
    padding: 2rem;
    border-radius: 8px;

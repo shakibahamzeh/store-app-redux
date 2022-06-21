@@ -53,7 +53,7 @@
 .order-container .btn-cart button:last-child{
     background-color: var(--yellow);
 }
-.order-container .btn-cart a:last-child:hover{
+.order-container .btn-cart button:last-child:hover{
     background-image: linear-gradient(to right, #e6c956, #f0cb38, #f0ba50, #d1b43e);
     box-shadow: 0 4px 15px 0 rgba(250, 208, 44, 0.67);
 }
