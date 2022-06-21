@@ -1,0 +1,17 @@
+.login-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+.login-page-container{
+   margin: 2rem;
+   max-width: 400px;
+   min-height: 100px;
+   padding: 2rem;
+   border-radius: 8px;
+   box-shadow: 6px 9px 27px -1px rgba(144,173,198,0.67);
+   -webkit-box-shadow: 6px 9px 27px -1px rgba(144,173,198,0.67);
+   -moz-box-shadow: 6px 9px 27px -1px rgba(144,173,198,0.67);
+}

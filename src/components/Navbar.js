@@ -6,9 +6,11 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import Form from './Form';
 import '../assets/navbar.css';
+import { useAuth0 } from '@auth0/auth0-react';
 
 
 const Navbar = () => {
+    const {user, isAuthenticated} = useAuth0();
     const navbarItems = [
         { id: 1, content: "Products" , pathName: "" },
         { id: 2, content: "Blog" , pathName: "blog" },
@@ -74,7 +76,14 @@ const Navbar = () => {
                     </div>
                     <div className='user-container'>
                       <Link to="/login">
-                         <PersonOutlineIcon className='user-icon'/>
+                        {
+                          isAuthenticated ? <div>
+                            <img src={user.picture} alt="user"/>
+                          </div> 
+                          :
+                          <PersonOutlineIcon className='user-icon'/>
+                        }
+                         
                       </Link>
                     </div>
                 </section>
