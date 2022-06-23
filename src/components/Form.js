@@ -1,22 +1,25 @@
 import React,{useState} from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import { useSelector,useDispatch } from 'react-redux';
 import "../assets/form.css";
+import Modal from './Modal';
 
 const Form = () => {
 
     
-    const productsData = useSelector(state => state.products);
+  
     const [search,setSearch] = useState("");
-    
-
+    const [openModal,setOpenModal] = useState(false);
     const changeHandler=(e)=>{
        setSearch(e.target.value); 
     }
-    const searchProduct= productsData.products.filter((product) =>
-    product.title.toLowerCase().startsWith(search.toLowerCase())
-  );
-  
+    
+   {/*const openModalHandler = () => {
+     if(window.innerWidth <= '769'){
+       setOpenModal(true)
+     }else{
+       setOpenModal(false)
+     }
+   }*/}
 
 
   return (
@@ -26,8 +29,11 @@ const Form = () => {
         placeholder='Search'
         onChange={changeHandler}
       />
-      <SearchIcon className='search-icon'/>
-    
+      <SearchIcon className='search-icon' onClick={() => setOpenModal(true)}/>
+      {
+        (window.innerWidth <= '769' ) && openModal && <Modal closeModal={setOpenModal}/>
+      }
+      
     </form>
   )
 }
