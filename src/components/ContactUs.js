@@ -7,7 +7,7 @@ import { notify } from '../functions/functions';
 import "../assets/contactUs.css";
 
 const ContactUs = () => {
-    const formik =useFormik({
+    const formik = useFormik({
         initialValues:{
             firstName:"",
             lastName:"",

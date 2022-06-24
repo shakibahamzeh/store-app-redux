@@ -8,24 +8,29 @@
 }
 .not-found-container h1{
     text-align: center;
-    color: #FF7800;
+    color: var(--yellow);
     font-size: 24px;
     font-weight: 700;
 }
 .not-found-container p{
     text-align: center;
-    color: #FFBC97;
+    color: var(--blueGray);
     margin: 1rem 0;
 }
 .not-found-container a{
     text-decoration: none;
-    color: #F7F7F7;
-    background-color: #FF7800;
+    color: var(--white);
+    background-color: var(--darkBlue);
     padding: 1rem;
     border-radius: 7px;
     text-align: center;
     transition: all 1s ease-out;
 }
 .not-found-container a:hover{
-    background-color: #FFBC97;
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, #45496d, #4f5a75, #51647a, #294a66);
+    box-shadow: 0 4px 15px 0 rgba(120, 148, 172, 0.67);
 }

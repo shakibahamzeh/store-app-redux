@@ -5,54 +5,55 @@ import { useAuth0 } from '@auth0/auth0-react';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
 import Form from './Form';
 import '../assets/navbar.css';
 
 
 
 
-const Navbar = () => {
-    
+const Navbar = ({changeHandler}) => {
+    //navbar Items
   const navbarItems = [
         { id: 1, content: "Products" , pathName: "" },
         { id: 2, content: "Blog" , pathName: "blog" },
         { id: 3, content: "AboutUs" , pathName: "aboutUs" },
         { id: 4, content: "ContactUs" , pathName: "contactUs" }, 
     ];
-
+    //counter
+    const counter = useSelector(state=>state.cart.itemsCounter);
+    //authentication
      const {user, isAuthenticated} = useAuth0(); 
+    //active navbar item
      const [activeId, setActiveId] = useState();
-     const counter = useSelector(state=>state.cart.itemsCounter);
+     // toggle nav
      const [toggleNav,setToggleNav] = useState(false);
     
      const toggleNavHandler = () => {
        setToggleNav(!toggleNav);
      }
 
+
+   
+    
+  
   return (
     <nav className='navbar'>
         <div className='brand'>
             <h2>STORE</h2>
         </div>
         <div className='nav-container'>
-              <div className='menu-container'>
+              <div className={toggleNav ? "menu-container expanded" : "menu-container"}>
                 
                 <ul className='menu'>
                   {
                     navbarItems.map((item)=> <Link to={`/${item.pathName}`} key={item.id}><li onClick={() => setActiveId(item.id)} className={activeId === item.id ? "active" : ""}>{item.content}</li></Link>)
                   }
                 </ul>
-                
-                
                  <MenuIcon className='menu-icon' onClick={toggleNavHandler}/>
-                 {
-                   (window.innerWidth <= '769' ) && toggleNav && <ul className='toggle-menu'>{navbarItems.map(item => <Link to={`/${item.pathName}`} key={item.id}><li onClick={() => setActiveId(item.id)} className={activeId === item.id ? "active" : ""}>{item.content}</li></Link>)}<CloseIcon className='close-icon' onClick={toggleNavHandler}/></ul>
-                  }
                 </div>
                 
                 <div className='form-container'>
-                   <Form/>
+                   <Form changeHandler={changeHandler}/>
                 </div>
                 <section className='nav-icons'>
                     <div className='shopping-cart'>

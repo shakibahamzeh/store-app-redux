@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import {Provider} from "react-redux";
 import store from "./redux/store";
@@ -18,14 +19,19 @@ import {PersistGate} from "redux-persist/integration/react"
 
 
 function App() {
-  let persistor = persistStore(store)
+  let persistor = persistStore(store);
+
+   const [search,setSearch] = useState("");
+      const changeHandler=(e)=>{
+       setSearch(e.target.value); 
+    }
   return (
     <Provider store={store}>
        <PersistGate persistor={persistor}>
        <div className="App">
-         <Navbar/>
+         <Navbar changeHandler={changeHandler}/>
          <Routes>
-           <Route path='/products' element={<Products/>}/>
+           <Route path='/products' element={<Products search={search}/>}/>
            <Route path='/products/:id' element={<ProductDetail/>}/>
            <Route path='/contactUs' element={<ContactUs/>}/>
            <Route path='/cart' element={<Cart/>}/>

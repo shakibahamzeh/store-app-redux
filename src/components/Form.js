@@ -3,16 +3,12 @@ import SearchIcon from '@mui/icons-material/Search';
 import "../assets/form.css";
 import Modal from './Modal';
 
-const Form = () => {
 
-    
-  
-    const [search,setSearch] = useState("");
-    const [openModal,setOpenModal] = useState(false);
-    const changeHandler=(e)=>{
-       setSearch(e.target.value); 
-    }
-    
+const Form = ({changeHandler}) => {
+
+  // modal search in 769 px and less  
+  const [openModal,setOpenModal] = useState(false);
+ 
    {/*const openModalHandler = () => {
      if(window.innerWidth <= '769'){
        setOpenModal(true)
@@ -23,7 +19,7 @@ const Form = () => {
 
 
   return (
-    <form className='nav-form'>
+    <form className='nav-form' onClick={(e)=>{e.stopPropagation()}}>
       <input 
         type="text"
         placeholder='Search'

@@ -9,18 +9,23 @@ import Slider from './Slider';
 import Pagination from './Pagination';
 
 
- const Products = () => {
+ const Products = ({search}) => {
     const dispatch = useDispatch();
     const productsData = useSelector(state => state.products);
     //pagation
 
     const [currentPage,setCurrentPage] = useState(1);
-    const [productsPerPage,setProductPerPage] = useState(24);
+    const [productsPerPage] = useState(24);
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-    const currentProducts = productsData.products.slice(indexOfFirstProduct, indexOfLastProduct);
+    const currentProducts = productsData.products.slice(indexOfFirstProduct, indexOfLastProduct) ||  productsData.products.filter((product) =>
+    product.title.toLowerCase().includes(search.toLowerCase())
+  );
     //function
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    
+
+
     useEffect(()=>{
         if(!productsData.products.length) dispatch(fetchProducts())
     },[]);
