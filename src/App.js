@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import './App.css';
 import {Provider} from "react-redux";
 import store from "./redux/store";
@@ -20,6 +21,7 @@ import {PersistGate} from "redux-persist/integration/react"
 
 function App() {
   let persistor = persistStore(store);
+  
 
   
   return (

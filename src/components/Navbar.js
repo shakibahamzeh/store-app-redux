@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector} from 'react-redux';
 import { useAuth0 } from '@auth0/auth0-react';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
@@ -7,6 +7,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import Form from './Form';
 import '../assets/navbar.css';
+import { replace } from 'formik';
 
 
 
@@ -31,15 +32,18 @@ const Navbar = ({changeHandler}) => {
      const toggleNavHandler = () => {
        setToggleNav(!toggleNav);
      }
-
-
+     const navigate = useNavigate();
+     const navigateHandler = () => {
+       navigate('',{replace : true})
+       setActiveId(1)
+     }
    
     
   
   return (
     <nav className='navbar'>
         <div className='brand'>
-            <h2>STORE</h2>
+           <h2 onClick={navigateHandler}>STORE</h2>
         </div>
         <div className='nav-container'>
               <div className={toggleNav ? "menu-container expanded" : "menu-container"}>

@@ -2,47 +2,36 @@ import React,{useState} from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import "../assets/form.css";
 import Modal from './Modal';
-import { useDispatch } from 'react-redux';
-import { fetchProducts } from '../redux/products/productAction';
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchTerm } from "../redux/search/searchActions";
+import { selectTerm } from "../redux/search/selectors";
 
 
 const Form = () => {
 
   // modal search in 769 px and less  
   const [openModal,setOpenModal] = useState(false);
-   const [search,setSearch] = useState("");
-   const dispatch = useDispatch();
-      const changeHandler=(e)=>{
-       setSearch(e.target.value); 
-    }
- 
-   {/*const openModalHandler = () => {
-     if(window.innerWidth <= '769'){
-       setOpenModal(true)
-     }else{
-       setOpenModal(false)
-     }
-   }*/}
-   const submitHandler = (e) => {
-     e.preventDefualt();
-     dispatch(fetchProducts(search))
-   }
+  const term = useSelector(selectTerm);
+	const dispatch = useDispatch();
+	const changeHandler = (e) => {
+		dispatch(setSearchTerm(e.target.value));
+	};
 
   return (
-    <form className='nav-form' onClick={(e)=>{e.stopPropagation()}} onSubmit={submitHandler}>
+    <form className='nav-form' onClick={(e)=>{e.stopPropagation()}} >
       <input 
         type="text"
         placeholder='Search'
-        onChange={(e) => changeHandler(e)}
-        value={search}
+        value={term}
+        onChange={e=>changeHandler(e)}
       />
       <SearchIcon className='search-icon' onClick={() => setOpenModal(true)}/>
       {
-        (window.innerWidth <= '769' ) && openModal && <Modal closeModal={setOpenModal} changeHandler={changeHandler} search={search}/>
+        (window.innerWidth <= '769' ) && openModal && <Modal closeModal={setOpenModal} search={term} changeHandler={changeHandler}/>
       }
       
     </form>
   )
 }
 
-export default Form
+export default Form;

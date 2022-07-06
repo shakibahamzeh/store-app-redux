@@ -16,10 +16,12 @@
     align-items: center;
     justify-content: center;
 }
+
 .navbar .brand h2{
      font-size: 48px;
      font-weight: 700;
      text-align: center;
+     cursor: pointer;
 }
 .nav-container{
     display: flex;
